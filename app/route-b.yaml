@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+  labels:
+    app: tomcat 
+  name: tomcat
+  namespace: lab-financial
+spec:
+  port:
+    targetPort: 8080-tcp
+  to:
+    kind: Service
+    name: tomcat
